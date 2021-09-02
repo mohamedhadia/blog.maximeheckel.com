@@ -268,7 +268,8 @@ body {
 
 a {
   color: var(--maximeheckel-colors-brand);
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 [hidden],
