@@ -37,10 +37,6 @@ export const StyledCheckbox = styled('input')`
     left: 8px;
     top: 5px;
     transform: rotate(var(--rotation, 20deg));
-
-    &:disabled {
-      border: 2px solid var(--maximeheckel-form-input-disabled-inner);
-    }
   }
 
   &:checked {

@@ -106,7 +106,7 @@ svg {
   --at-sign-delay: 0s;
   --tick: 0;
   --tick-delay: 0.5s;
-  --icon-color: var(--maximeheckel-form-input-active);
+  --icon-color: hsl(var(--palette-green-65));
 }
 
 

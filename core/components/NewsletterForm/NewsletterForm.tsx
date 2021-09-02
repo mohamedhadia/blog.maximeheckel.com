@@ -13,6 +13,9 @@ import {
   ErrorMessage,
 } from './Styles';
 import { subscribeCall } from './utils';
+import Button from '../NewButton';
+import TextInput from '../TextInput';
+import Flex from '../Flex';
 // import TextInput from '../TextInput';
 
 const formVariant = {
@@ -150,18 +153,26 @@ const NewsletterForm = (props: Props) => {
               and tips as well as exclusive previews of upcoming articles.
             </p>
           )}
-
-          {/* <TextInput
-            aria-label="Email"
-            id="email-input"
-            type="email"
-            placeholder="your@email.com"
-            autoComplete="off"
-            value={email}
-            onChange={(event) => setEmail(event.currentTarget.value)}
-            required
-          /> */}
-          <NewsLetterForm
+          <Flex gap={8}>
+            <TextInput
+              aria-label="Email"
+              id="email-input"
+              type="email"
+              placeholder="your@email.com"
+              autoComplete="off"
+              value={email}
+              onChange={(event) => setEmail(event.currentTarget.value)}
+              required
+            />
+            <Button
+              type="submit"
+              aria-label="Subscribe to my newsletter"
+              title="Subscribe to my newsletter"
+            >
+              Sign me up!
+            </Button>
+          </Flex>
+          {/* <NewsLetterForm
             animate={isChecked ? 'checked' : 'unchecked'}
             variants={formVariant}
             transition={{
@@ -251,7 +262,7 @@ const NewsletterForm = (props: Props) => {
                 Done! 🎉
               </motion.div>
             </NewsLetterSubmitButton>
-          </NewsLetterForm>
+          </NewsLetterForm> */}
           {error ? (
             // @ts-ignore
             error.message.includes('already subscribed') ? (

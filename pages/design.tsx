@@ -35,6 +35,8 @@ import { getTweets } from 'lib/tweets';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { TransformedTweet } from 'types/tweet';
+import NewButton from '@theme/components/NewButton';
+import Flex from '@theme/components/Flex';
 
 /**
  * TODO:
@@ -84,7 +86,7 @@ export default function Design(props: {
 
   return (
     <Layout footer>
-      <Seo title="Components" />
+      <Seo title="Design" />
       <Grid
         columns="var(--layout-medium)"
         columnGap={20}
@@ -280,8 +282,29 @@ export default function Design(props: {
             </ol>
           </MDXBody>
         </section>
+        <section id="button">
+          <h2>Buttons</h2>
+          <Flex>
+            <NewButton>Primary</NewButton>
+            <NewButton variant="secondary">Secondary</NewButton>
+          </Flex>
+        </section>
         <section id="form-components">
           <h2>Form Components</h2>
+
+          <Flex gap={8}>
+            <TextInput
+              aria-label="Email"
+              id="email-input"
+              type="email"
+              placeholder="hello@maximeheckel.com"
+              onChange={(event) => setEmail(event.currentTarget.value)}
+              value={email}
+            />
+            <NewButton>Subscribe</NewButton>
+          </Flex>
+
+          <br />
           <Grid gap={24} columns="repeat(auto-fit, minmax(300px, 1fr))">
             <TextInput
               label="Name"
@@ -307,6 +330,7 @@ export default function Design(props: {
               placeholder="hello@maximeheckel.com"
               onChange={(event) => setEmail(event.currentTarget.value)}
               value={email}
+              autoComplete="off"
             />
 
             <TextInput
