@@ -46,6 +46,7 @@ const StyledButton = styled('button')<{ variant: string }>`
   ${(p) =>
     p.variant === 'secondary' &&
     `
+    min-width: unset;
     background: transparent;
     color: var(--color, var(--maximeheckel-colors-brand));
 
@@ -69,8 +70,12 @@ const StyledButton = styled('button')<{ variant: string }>`
 
 // @ts-ignore
 const Button = (props) => {
-  const { variant = 'primary', children } = props;
-  return <StyledButton variant={variant}>{children}</StyledButton>;
+  const { variant = 'primary', children, ...rest } = props;
+  return (
+    <StyledButton variant={variant} {...rest}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default Button;
